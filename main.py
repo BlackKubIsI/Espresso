@@ -8,7 +8,7 @@ import sys
 class Main(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("Ui.ui", self)
+        uic.loadUi("main.ui", self)
         self.setGeometry(100, 100, 700, 580)
         with sqlite3.connect("coffee.sqlite") as con:
             self.table = con.cursor().execute(f"""select * from coffee""").fetchall()
